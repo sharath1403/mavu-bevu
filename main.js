@@ -4,6 +4,16 @@ const mobileMenu = document.querySelector("#mobile-menu");
 const mobileLinks = mobileMenu?.querySelectorAll("a") ?? [];
 const contactForm = document.querySelector("#contact-form");
 const formStatus = document.querySelector("#form-status");
+const contactApiHost = "https://contact.apps-api.instantpage.secureserver.net";
+const contactEndpoint = `${contactApiHost}/v3/messages`;
+const websiteDetails = {
+  websiteId: "ccdd8d30-b5dc-4ba4-b8d0-094a25c441a7",
+  widgetId: "9348b19c-e100-4b57-87f3-917139bec823",
+  pageId: "287f429b-ed6e-416e-aa2a-319409973b79",
+  accountId: "cfa35dc9-6762-4461-a1c7-9c2939d49ba4",
+};
+let recaptchaLoadPromise;
+let recaptchaSiteKey;
 
 function updateHeader() {
   header?.classList.toggle("scrolled", window.scrollY > 24);
@@ -88,6 +98,68 @@ function validateForm(form) {
   return valid;
 }
 
+function loadRecaptcha() {
+  if (!recaptchaLoadPromise) {
+    recaptchaLoadPromise = (async () => {
+      const response = await fetch(`${contactApiHost}/v3/recaptcha`);
+      if (!response.ok) throw new Error("Could not load reCAPTCHA settings");
+
+      const { siteKey } = await response.json();
+      if (!siteKey) throw new Error("Missing reCAPTCHA site key");
+      recaptchaSiteKey = siteKey;
+
+      if (!window.grecaptcha?.execute) {
+        await new Promise((resolve, reject) => {
+          const script = document.createElement("script");
+          script.src = `https://www.google.com/recaptcha/api.js?render=${siteKey}`;
+          script.async = true;
+          script.defer = true;
+          script.onload = () => window.grecaptcha.ready(resolve);
+          script.onerror = reject;
+          document.head.append(script);
+        });
+      }
+    })().catch((error) => {
+      recaptchaLoadPromise = undefined;
+      throw error;
+    });
+  }
+
+  return recaptchaLoadPromise;
+}
+
+function getFormMetadata() {
+  const userAgent = navigator.userAgent;
+  const browserName = /Edg\//.test(userAgent)
+    ? "Microsoft Edge"
+    : /Firefox\//.test(userAgent)
+      ? "Firefox"
+      : /Chrome\//.test(userAgent)
+        ? "Chrome"
+        : /Safari\//.test(userAgent)
+          ? "Safari"
+          : "Unknown";
+  const deviceOs = /Windows/i.test(userAgent)
+    ? "Windows"
+    : /Mac OS X/i.test(userAgent)
+      ? "MacOS"
+      : /Android/i.test(userAgent)
+        ? "Android"
+        : /iPhone|iPad|iPod/i.test(userAgent)
+          ? "iOS"
+          : /Linux/i.test(userAgent)
+            ? "Linux"
+            : "Unknown";
+
+  return {
+    formIdentifier: "CONTACT_US",
+    pathName: window.location.pathname,
+    deviceType: /Mobi|Android/i.test(userAgent) ? "mobile" : "desktop",
+    deviceOs,
+    browserName,
+  };
+}
+
 contactForm?.addEventListener("submit", async (event) => {
   event.preventDefault();
 
@@ -103,23 +175,61 @@ contactForm?.addEventListener("submit", async (event) => {
   submitLabel.textContent = "Sending...";
   formStatus.textContent = "";
 
-  /*
-   * Development placeholder.
-   *
-   * Replace this block with the final GoDaddy/server endpoint once the
-   * client's hosting/form setup is confirmed.
-   *
-   * Example:
-   * const response = await fetch("/contact.php", {
-   *   method: "POST",
-   *   body: new FormData(contactForm)
-   * });
-   */
+  try {
+    await loadRecaptcha();
+    const recaptchaToken = await window.grecaptcha.execute(recaptchaSiteKey, {
+      action: "formSubmit",
+    });
+    const phoneValue = contactForm.elements.phone.value.trim();
+    const response = await fetch(contactEndpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json; charset=UTF-8" },
+      body: JSON.stringify({
+        ...websiteDetails,
+        domainName: "mavubevu.com",
+        optedToSubscribe: false,
+        locale: "en-US",
+        metadata: getFormMetadata(),
+        formData: [
+          {
+            label: "Name",
+            value: contactForm.elements.name.value.trim(),
+            keyName: "name",
+          },
+          {
+            label: "Mobile Number",
+            value: phoneValue.replace(/[+()-]/g, ""),
+            keyName: "phone",
+          },
+          {
+            label: "Email",
+            value: contactForm.elements.email.value.trim(),
+            replyTo: true,
+            keyName: "email",
+          },
+          {
+            label: "Message",
+            value: contactForm.elements.message.value,
+            keyName: "message",
+          },
+          {
+            label: "_app_id",
+            value: contactForm.elements._app_id.value,
+          },
+        ],
+        recaptchaToken,
+      }),
+    });
 
-  await new Promise((resolve) => setTimeout(resolve, 700));
+    if (!response.ok) throw new Error("Contact request failed");
 
-  submitLabel.textContent = "Send";
-  submitButton.disabled = false;
-  formStatus.textContent =
-    "The form is ready for the production email endpoint. Please configure the hosting endpoint before launch.";
+    contactForm.reset();
+    formStatus.textContent = "Thanks for reaching out. We'll be in touch soon.";
+  } catch {
+    formStatus.textContent =
+      "We couldn't send your message. Please try again shortly.";
+  } finally {
+    submitLabel.textContent = "Send";
+    submitButton.disabled = false;
+  }
 });

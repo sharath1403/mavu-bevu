@@ -17,6 +17,12 @@
       content="We help organisations turn ideas, initiatives and impact into communication people notice, understand and remember."
     />
     <title>MAVU BEVU — Brand · Content · Editing · Marketing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
 
@@ -61,7 +67,7 @@
             <span>M</span><span>A</span><span>V</span><span>U</span>
             <span>B</span><span>E</span><span>V</span><span>U</span>
           </h1>
-          <p class="descriptor">Brand · Content · Editing · Marketing</p>
+          <p class="descriptor">Brand · Editing · Content · Marketing</p>
         </div>
         <a class="scroll-cue" href="#intro" aria-label="Scroll to discover more"
           >Scroll to discover</a
@@ -74,12 +80,13 @@
         aria-labelledby="intro-title"
       >
         <div class="container opening-grid">
-          <div>
-            <p class="eyebrow">MAVU BEVU</p>
-            <h2 class="display-heading" id="intro-title">
-              GOOD WORK<br />DESERVES<br />ATTENTION.
-            </h2>
+          <div class="intro-mark" aria-label="MAVU BEVU">
+            <span>M</span><span>A</span><span>V</span><span>U</span>
+            <span>B</span><span>E</span><span>V</span><span>U</span>
           </div>
+          <h2 class="display-heading" id="intro-title">
+            Good work deserves attention.
+          </h2>
           <p class="lead-copy">
             We help organisations turn ideas, initiatives and impact into
             communication people notice, understand and remember.
@@ -95,36 +102,25 @@
             <article class="service">
               <span class="service-number">01</span>
               <h3>Brand</h3>
-              <p>
-                Campaign identities · Visual systems · Event branding ·
-                Communication design
-              </p>
+              <p>Define what you want to be recognised for.</p>
             </article>
 
             <article class="service">
               <span class="service-number">02</span>
-              <h3>Content</h3>
-              <p>
-                Content strategy · Copy · Social content · Stories · Campaign
-                concepts
-              </p>
+              <h3>Editing</h3>
+              <p>Shape your existing content to fit your brand identity.</p>
             </article>
 
             <article class="service">
               <span class="service-number">03</span>
-              <h3>Editing</h3>
-              <p>
-                Reels · Event films · Recaps · Interviews · Short-form video
-              </p>
+              <h3>Content</h3>
+              <p>Create bespoke content for your brand identity.</p>
             </article>
 
             <article class="service">
               <span class="service-number">04</span>
               <h3>Marketing</h3>
-              <p>
-                Social media · Campaign planning · Distribution · Promotion ·
-                Performance
-              </p>
+              <p>Get it in front of the people who matter.</p>
             </article>
           </div>
         </div>
@@ -137,13 +133,13 @@
         <div class="container">
           <p class="eyebrow">From initiative to impact</p>
           <h2 class="large-heading" id="impact-title">
-            YOUR WORK DESERVES<br />MORE THAN A POST.
+            Your work deserves more than a post.
           </h2>
           <p class="lead-copy impact-copy">
-            An event lasts a day. An initiative may last a month. Its story can
-            travel much further. We build a consistent creative language around
-            the work, from the first announcement to the final story of its
-            impact.
+            An event may last a day. An initiative may last a month. Its impact
+            can travel much further. We help turn the work you do into
+            communication that builds recognition, carries the story forward and
+            keeps the impact visible long after the moment has passed.
           </p>
 
           <div class="impact-flow">
@@ -169,7 +165,7 @@
         aria-labelledby="work-title"
       >
         <div class="container">
-          <p class="eyebrow" id="work-title">Selected work</p>
+          <p class="eyebrow work-title" id="work-title">Selected work</p>
           <p class="coming-soon" aria-label="Selected work coming soon">
             COMING SOON
           </p>
@@ -208,6 +204,10 @@
               One does not diminish the other.<br />
               <strong>Together, they make the whole story.</strong>
             </p>
+            <div class="name-resolution" aria-label="MAVU BEVU wordmark">
+              <span>M</span><span>A</span><span>V</span><span>U</span>
+              <span>B</span><span>E</span><span>V</span><span>U</span>
+            </div>
           </div>
         </div>
       </section>
@@ -220,21 +220,17 @@
         <div class="container">
           <p class="eyebrow">Start a conversation</p>
           <h2 class="large-heading contact-heading" id="contact-title">
-            DOING SOMETHING<br />
-            WORTH TALKING ABOUT?<br /><br />
-            LET'S MAKE SURE<br />
-            PEOPLE TALK ABOUT IT.
+            Let's make sure people talk about it.
           </h2>
 
           <div class="contact-layout">
             <div class="contact-intro">
               <p>
-                Tell us a little about what you're working on. We'll get back to
-                you soon.
+                Tell us what you're working on, where you are today and what you
+                want people to notice. We'll take it from there.
               </p>
             </div>
 
-            <!-- Replace the action with the final GoDaddy/server endpoint before production. -->
             <form
               class="contact-form"
               id="contact-form"
@@ -242,6 +238,14 @@
               method="post"
               novalidate
             >
+              <input
+                id="_app_id"
+                name="_app_id"
+                type="text"
+                autocomplete="off"
+                tabindex="-1"
+                hidden
+              />
               <div class="field">
                 <label for="name">Name <span aria-hidden="true">*</span></label>
                 <input
@@ -296,7 +300,7 @@
               </div>
 
               <button class="submit-button" type="submit">
-                <span data-submit-label>Send</span>
+                <span data-submit-label>Send →</span>
               </button>
 
               <p
@@ -309,9 +313,11 @@
           </div>
 
           <footer class="footer">
-            <span>MAVU BEVU</span>
-            <span>Brand · Content · Editing · Marketing</span>
-            <span>Karnataka, India</span>
+            <span class="footer-wordmark" aria-label="MAVU BEVU">
+              <span>M</span><span>A</span><span>V</span><span>U</span>
+              <span>B</span><span>E</span><span>V</span><span>U</span>
+            </span>
+            <span>Brand · Editing · Content · Marketing</span>
           </footer>
         </div>
       </section>
