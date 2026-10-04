@@ -44,16 +44,32 @@ function setError(field, message) {
 function validateForm(form) {
   let valid = true;
   const name = form.elements.name;
+  const phone = form.elements.phone;
   const email = form.elements.email;
   const message = form.elements.message;
 
   setError(name, "");
+  setError(phone, "");
   setError(email, "");
   setError(message, "");
 
   if (!name.value.trim()) {
     setError(name, "Please enter your name.");
     valid = false;
+  }
+
+  if (!phone.value.trim()) {
+    setError(phone, "Please enter your mobile number.");
+    valid = false;
+  } else {
+    const phoneValue = phone.value.trim();
+    const phoneDigits = phoneValue.replace(/\D/g, "");
+    const hasValidFormat = /^\+?[0-9\s().-]+$/.test(phoneValue);
+
+    if (!hasValidFormat || phoneDigits.length < 7 || phoneDigits.length > 15) {
+      setError(phone, "Please enter a valid mobile number.");
+      valid = false;
+    }
   }
 
   if (!email.value.trim()) {
@@ -65,7 +81,7 @@ function validateForm(form) {
   }
 
   if (!message.value.trim()) {
-    setError(message, "Please tell us a little about your project.");
+    setError(message, "Please enter a message.");
     valid = false;
   }
 
@@ -102,7 +118,7 @@ contactForm?.addEventListener("submit", async (event) => {
 
   await new Promise((resolve) => setTimeout(resolve, 700));
 
-  submitLabel.textContent = "Send enquiry →";
+  submitLabel.textContent = "Send";
   submitButton.disabled = false;
   formStatus.textContent =
     "The form is ready for the production email endpoint. Please configure the hosting endpoint before launch.";

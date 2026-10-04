@@ -429,11 +429,13 @@ button { color: inherit; }
 
 .contact {
   min-height: 78vh;
-  background: var(--indigo);
-  color: white;
+  background: var(--bone);
+  color: var(--black);
   display: flex;
   align-items: center;
 }
+
+.contact .eyebrow { color: var(--moss); }
 
 .contact-heading { max-width: 1100px; }
 
@@ -458,7 +460,12 @@ button { color: inherit; }
   display: inline-block;
   font-size: 12px;
   letter-spacing: .16em;
+  border-bottom: 1px solid var(--rust);
+  padding-bottom: 6px;
+  transition: color .2s ease;
 }
+
+.email-link:hover { color: var(--rust); }
 
 .contact-form {
   display: grid;
@@ -473,42 +480,48 @@ button { color: inherit; }
   text-transform: uppercase;
 }
 
+.field label span { color: var(--rust); }
+
 .field input,
 .field textarea {
   width: 100%;
   border: 0;
-  border-bottom: 1px solid rgba(255,255,255,.65);
+  border-bottom: 1px solid rgba(8,8,8,.45);
   border-radius: 0;
   outline: 0;
   padding: 12px 0;
   background: transparent;
-  color: white;
+  color: var(--black);
 }
 
 .field textarea { resize: vertical; min-height: 130px; }
 
 .field input:focus,
 .field textarea:focus {
-  border-bottom-color: white;
+  border-bottom-color: var(--indigo);
 }
 
 .field-error {
   min-height: 18px;
   margin: 7px 0 0;
   font-size: 12px;
+  color: var(--rust);
 }
 
 .submit-button {
   justify-self: start;
   border: 0;
-  border-bottom: 1px solid white;
-  padding: 0 0 8px;
-  background: transparent;
+  padding: 14px 18px;
+  background: var(--indigo);
+  color: var(--bone);
   cursor: pointer;
   font-size: 12px;
   letter-spacing: .22em;
   text-transform: uppercase;
+  transition: background .2s ease;
 }
+
+.submit-button:hover { background: var(--rust); }
 
 .submit-button[disabled] { opacity: .55; cursor: wait; }
 
@@ -516,6 +529,7 @@ button { color: inherit; }
   min-height: 22px;
   margin: 0;
   font-size: 13px;
+  color: var(--moss);
 }
 
 .footer {
