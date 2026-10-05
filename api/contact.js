@@ -11,7 +11,7 @@ export default async function handler(request, response) {
   try {
     const { name, phone, email, message } = request.body || {};
 
-    // Basic server-side validation
+    // Server-side validation
     if (!name || !email || !message) {
       return response.status(400).json({
         success: false,
@@ -19,7 +19,6 @@ export default async function handler(request, response) {
       });
     }
 
-    // Basic email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!emailRegex.test(email)) {
@@ -47,22 +46,36 @@ export default async function handler(request, response) {
       },
       body: JSON.stringify({
         from: "Mavubevu Website <contact@mavubevu.com>",
-        to: ["YOUR_EMAIL@example.com"],
+
+        // CHANGE THIS
+        to: ["sharath.bsy@gmail.com"],
+
         reply_to: email,
+
         subject: `New Contact Us Message from ${name}`,
+
         html: `
           <div style="font-family: Arial, sans-serif; line-height: 1.6;">
             <h2>New Contact Us Message</h2>
 
-            <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+            <p>
+              <strong>Name:</strong>
+              ${escapeHtml(name)}
+            </p>
 
-            <p><strong>Mobile Number:</strong> ${escapeHtml(
-          phone || "Not provided"
-        )}</p>
+            <p>
+              <strong>Mobile Number:</strong>
+              ${escapeHtml(phone || "Not provided")}
+            </p>
 
-            <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+            <p>
+              <strong>Email:</strong>
+              ${escapeHtml(email)}
+            </p>
 
-            <p><strong>Message:</strong></p>
+            <p>
+              <strong>Message:</strong>
+            </p>
 
             <p style="white-space: pre-wrap;">
               ${escapeHtml(message)}
@@ -81,13 +94,18 @@ export default async function handler(request, response) {
     const result = await emailResponse.json();
 
     if (!emailResponse.ok) {
-      console.error("Resend error:", result);
+      console.error("Resend error:", {
+        status: emailResponse.status,
+        result,
+      });
 
       return response.status(500).json({
         success: false,
-        message: "Unable to send email.",
+        message: result?.message || "Unable to send email.",
       });
     }
+
+    console.log("Email sent successfully:", result);
 
     return response.status(200).json({
       success: true,
