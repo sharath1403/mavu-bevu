@@ -24,7 +24,7 @@ body {
   margin: 0;
   background: var(--black);
   color: var(--bone);
-  font-family: Montserrat, Arial, Helvetica, sans-serif;
+  font-family: Montserrat, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -135,6 +135,7 @@ button {
   width: 100px;
   font-size: 10px;
   line-height: 1.3;
+  font-weight: 600;
   text-align: center;
 }
 
@@ -230,7 +231,7 @@ button {
   grid-template-columns: repeat(4, 1fr);
   width: min(600px, 78vw);
   margin: 0 auto;
-  font-size: 142px;
+  font-size: 130px;
   line-height: 1;
   font-weight: 300;
   letter-spacing: 0;
@@ -297,11 +298,11 @@ button {
 .display-heading {
   max-width: 1200px;
   margin: 28px 0 36px;
-  font-size: 126px;
+  font-size: 116px;
 }
 
 .large-heading {
-  font-size: 118px;
+  font-size: 108px;
 }
 
 .lead-copy {
@@ -327,6 +328,7 @@ button {
   line-height: 1;
   row-gap: 5px;
   text-align: center;
+  letter-spacing: 0;
 }
 
 .intro-mark {
@@ -377,7 +379,7 @@ button {
 
 .service h3 {
   margin: 46px 0 18px;
-  font-size: 68px;
+  font-size: 61px;
   font-weight: 400;
   letter-spacing: -0.04em;
 }
@@ -385,7 +387,7 @@ button {
 .service p {
   max-width: 480px;
   margin: 0;
-  font-size: 21px;
+  font-size: 19px;
   line-height: 1.5;
   opacity: 0.7;
 }
@@ -432,7 +434,7 @@ button {
 }
 
 .step span {
-  font-size: 30px;
+  font-size: 29px;
 }
 
 .work {
@@ -456,7 +458,7 @@ button {
   margin: 0;
   place-items: center;
   text-align: center;
-  font-size: 104px;
+  font-size: 101px;
   line-height: 1;
   letter-spacing: 0.08em;
   font-weight: 300;
@@ -478,8 +480,8 @@ button {
 .stacked-label {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  width: min(500px, 100%);
-  font-size: 112px;
+  width: min(600px, 78vw);
+  font-size: 101px;
   line-height: 1;
   font-weight: 300;
   text-align: center;
@@ -492,8 +494,9 @@ button {
 
 .story-copy {
   margin: 56px 0 28px;
-  font-size: 34px;
+  font-size: 31px;
   line-height: 1.32;
+  letter-spacing: -0.025em;
 }
 
 .story-copy:first-of-type {
@@ -510,6 +513,7 @@ button {
 
 .final-story {
   margin-top: 58px;
+  font-size: 34px;
 }
 
 .name-resolution {
@@ -538,7 +542,8 @@ button {
 .contact-heading {
   max-width: 1220px;
   margin: 30px 0 76px;
-  font-size: 124px;
+  font-size: 115px;
+  font-weight: 400;
 }
 
 .contact-layout {
@@ -601,6 +606,7 @@ button {
   padding: 12px 0;
   background: transparent;
   color: var(--bone);
+  font-size: 18px;
 }
 
 .field textarea {
@@ -627,7 +633,8 @@ button {
   background: var(--bone);
   color: var(--black);
   cursor: pointer;
-  font-size: 12px;
+  font-size: 11px;
+  font-weight: 600;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   transition: background 0.2s ease;
@@ -697,43 +704,49 @@ button {
 }
 
 @media (max-width: 1024px) {
+  .descriptor {
+    font-size: 11px;
+  }
   .wordmark {
-    font-size: 120px;
+    font-size: 92px;
   }
   .display-heading {
-    font-size: 96px;
+    font-size: 82px;
   }
   .large-heading,
   .impact .large-heading {
-    font-size: 90px;
+    font-size: 77px;
   }
   .lead-copy,
   .impact-copy {
-    font-size: 22px;
+    font-size: 20px;
   }
   .service h3 {
-    font-size: 56px;
+    font-size: 43px;
   }
   .service p {
-    font-size: 18px;
+    font-size: 16px;
   }
   .step span {
-    font-size: 24px;
+    font-size: 20px;
   }
   .coming-soon {
-    font-size: 88px;
+    font-size: 72px;
   }
   .stacked-label {
-    font-size: 90px;
+    font-size: 72px;
   }
   .story-copy {
-    font-size: 28px;
+    font-size: 22px;
+  }
+  .final-story {
+    font-size: 25px;
   }
   .contact-heading {
-    font-size: 96px;
+    font-size: 82px;
   }
   .contact-intro > p {
-    font-size: 20px;
+    font-size: 17px;
   }
 }
 
@@ -762,7 +775,7 @@ button {
   .descriptor {
     max-width: 340px;
     margin-top: 42px;
-    font-size: 13px;
+    font-size: 9px;
     letter-spacing: 0.13em;
     line-height: 1.8;
   }
@@ -775,7 +788,7 @@ button {
   }
 
   .display-heading {
-    font-size: 54px;
+    font-size: 61px;
   }
   .large-heading,
   .impact .large-heading {
@@ -803,10 +816,10 @@ button {
   }
 
   .service h3 {
-    font-size: 48px;
+    font-size: 42px;
   }
   .service p {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .impact-flow {
@@ -820,10 +833,13 @@ button {
   .step {
     min-height: 150px;
   }
+  .step span {
+    font-size: 20px;
+  }
 
   .coming-soon {
     min-height: 32vh;
-    font-size: 58px;
+    font-size: 53px;
   }
 
   .philosophy-grid > div:first-child {
@@ -832,19 +848,22 @@ button {
   }
 
   .stacked-label {
-    width: min(390px, 90vw);
-    font-size: 84px;
+    width: min(390px, 100%);
+    font-size: 68px;
   }
 
   .story-copy {
     font-size: 22px;
+  }
+  .final-story {
+    font-size: 25px;
   }
 
   .contact-heading {
     font-size: 60px;
   }
   .contact-intro > p {
-    font-size: 18px;
+    font-size: 17px;
   }
 
   .contact-layout {
@@ -857,19 +876,29 @@ button {
   }
 }
 
+@media (max-width: 680px) {
+  .display-heading {
+    font-size: 54px;
+  }
+}
+
 @media (max-width: 480px) {
   .section {
     padding-block: 88px;
   }
 
   .wordmark {
+    font-size: 84px;
+  }
+  .display-heading {
+    font-size: 54px;
+  }
+  .large-heading,
+  .impact .large-heading {
     font-size: 58px;
   }
-  .display-heading,
-  .large-heading,
-  .impact .large-heading,
   .contact-heading {
-    font-size: 42px;
+    font-size: 60px;
   }
   .service h3 {
     font-size: 42px;
@@ -878,7 +907,10 @@ button {
     font-size: 16px;
   }
   .story-copy {
-    font-size: 21px;
+    font-size: 22px;
+  }
+  .final-story {
+    font-size: 25px;
   }
 
   .impact-flow {
@@ -903,5 +935,30 @@ button {
 
   .coming-soon {
     font-size: 42px;
+  }
+}
+
+@media (max-width: 420px) {
+  .wordmark {
+    font-size: 78px;
+  }
+}
+
+@media (max-width: 375px) {
+  .wordmark {
+    font-size: 72px;
+  }
+}
+
+@media (max-width: 340px) {
+  .wordmark {
+    width: 100%;
+    font-size: 64px;
+  }
+  .display-heading {
+    font-size: 46px;
+  }
+  .impact .large-heading {
+    font-size: 52px;
   }
 }
