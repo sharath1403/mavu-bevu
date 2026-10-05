@@ -29,7 +29,10 @@ jobs:
         uses: actions/configure-pages@v6
 
       - name: Stage static site
-        run: mkdir _site && cp index.html main.js styles.css _site/
+        run: |
+          mkdir -p _site
+          cp index.html robots.txt sitemap.xml _site/
+          cp -R css js _site/
 
       - name: Upload site files
         uses: actions/upload-pages-artifact@v5
