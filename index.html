@@ -23,7 +23,7 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
   </head>
 
   <body>
@@ -36,6 +36,8 @@
       </a>
 
       <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="#top">Home</a>
+        <a href="#services">What we do</a>
         <a href="#work">Work</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
@@ -54,6 +56,8 @@
 
     <div class="mobile-menu" id="mobile-menu" hidden>
       <nav aria-label="Mobile navigation">
+        <a href="#top">Home</a>
+        <a href="#services">What we do</a>
         <a href="#work">Work</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
@@ -94,7 +98,11 @@
         </div>
       </section>
 
-      <section class="section section-black" aria-labelledby="services-title">
+      <section
+        class="section section-black"
+        id="services"
+        aria-labelledby="services-title"
+      >
         <div class="container">
           <p class="eyebrow" id="services-title">What we do</p>
 
@@ -323,6 +331,50 @@
       </section>
     </main>
 
-    <script src="main.js" defer></script>
+    <script src="./js/main.js" defer></script>
+    <!-- GoDaddy Conversations / Reamaze Chat -->
+    <script
+      type="text/javascript"
+      async
+      src="https://cdn.reamaze.com/assets/reamaze-loader.js"
+    ></script>
+
+    <script type="text/javascript">
+      var _support = _support || { ui: {}, user: {} };
+
+      _support["account"] = "ccdd8d30-b5dc-4ba4-b8d0-094a25c441a7";
+
+      _support["ui"]["contactMode"] = "mixed";
+      _support["ui"]["enableKb"] = "true";
+      _support["ui"]["mailbox"] = "92221490";
+
+      _support["ui"]["styles"] = {
+        widgetColor: "rgba(16, 162, 197, 1)",
+        gradient: true,
+      };
+
+      _support["ui"]["shoutboxFacesMode"] = "";
+
+      _support["ui"]["widget"] = {
+        allowBotProcessing: "true",
+        slug: "https-slash-slash-mavu-bevu-dot-vercel-dot-app-slash",
+
+        label: {
+          text: "Let us know if you have any questions! 😊",
+          mode: "notification",
+          delay: 3,
+          duration: 30,
+          primary: "",
+          sound: true,
+        },
+
+        position: "bottom-right",
+      };
+
+      _support["apps"] = {
+        recentConversations: {},
+        faq: { enabled: true },
+      };
+    </script>
   </body>
 </html>
