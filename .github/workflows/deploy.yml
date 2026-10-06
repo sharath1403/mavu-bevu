@@ -32,7 +32,7 @@ jobs:
         run: |
           mkdir -p _site
           cp index.html robots.txt sitemap.xml _site/
-          cp -R css js _site/
+          cp -R css fonts js _site/
 
       - name: Upload site files
         uses: actions/upload-pages-artifact@v5

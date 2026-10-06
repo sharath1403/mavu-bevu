@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/montserrat-latin.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+}
+
 :root {
   --black: #080808;
   --bone: #e8e6df;
@@ -216,7 +224,7 @@ button {
   display: flex;
   align-items: center;
   position: relative;
-  padding: 110px var(--pad) 50px;
+  padding: 0 var(--pad);
 }
 
 .hero-inner {
@@ -231,11 +239,11 @@ button {
   grid-template-columns: repeat(4, 1fr);
   width: min(600px, 78vw);
   margin: 0 auto;
-  font-size: 130px;
+  font-size: clamp(64px, 9vw, 142px);
   line-height: 1;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 0;
-  row-gap: 0.1em;
+  row-gap: 0.07em;
 }
 
 .wordmark span {
@@ -270,7 +278,7 @@ button {
   width: 100%;
   margin: 42px auto 0;
   font-size: 15px;
-  line-height: 1.6;
+  line-height: normal;
   letter-spacing: 0.2em;
   text-transform: uppercase;
 }
@@ -289,8 +297,8 @@ button {
 .display-heading,
 .large-heading {
   margin: 0;
-  font-weight: 400;
-  letter-spacing: -0.055em;
+  font-weight: 500;
+  letter-spacing: -0.065em;
   line-height: 0.93;
   text-transform: uppercase;
 }
@@ -483,7 +491,7 @@ button {
   width: min(600px, 78vw);
   font-size: 101px;
   line-height: 1;
-  font-weight: 300;
+  font-weight: 400;
   text-align: center;
   row-gap: 0.1em;
 }
@@ -706,9 +714,6 @@ button {
 @media (max-width: 1024px) {
   .descriptor {
     font-size: 11px;
-  }
-  .wordmark {
-    font-size: 92px;
   }
   .display-heading {
     font-size: 82px;
