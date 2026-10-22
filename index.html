@@ -5,18 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="MAVU BEVU is a creative company working across brand, content, editing and marketing."
+      content="MAVU BEVU is a creative studio for brand identity, editing, content and marketing."
     />
-    <meta name="theme-color" content="#080808" />
-    <meta
-      property="og:title"
-      content="MAVU BEVU — Brand · Content · Editing · Marketing"
-    />
+    <meta name="theme-color" content="#f5f2e9" />
+    <meta property="og:title" content="MAVU BEVU — A Creative Studio" />
     <meta
       property="og:description"
-      content="We help organisations turn ideas, initiatives and impact into communication people notice, understand and remember."
+      content="A creative studio for brand identity, editing, content and marketing."
     />
-    <title>MAVU BEVU — Brand · Content · Editing · Marketing</title>
+    <title>MAVU BEVU — A Creative Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Raleway:wght@500&amp;display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
 
@@ -24,193 +27,126 @@
     <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="site-header" data-header>
-      <a class="mini-wordmark" href="#top" aria-label="MAVU BEVU">
-        <span>M</span><span>A</span><span>V</span><span>U</span> <span>B</span
-        ><span>E</span><span>V</span><span>U</span>
+      <a class="stacked-mark" href="#top" aria-label="MAVU BEVU">
+        <span class="mark-row mango-row"><b>M</b><b>A</b><b>V</b><b>U</b></span>
+        <span class="mark-row neem-row"><b>B</b><b>E</b><b>V</b><b>U</b></span>
       </a>
-
-      <nav class="desktop-nav" aria-label="Primary navigation">
-        <a href="#top">Home</a>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="#about">Our thinking</a>
         <a href="#services">What we do</a>
-        <a href="#work">Work</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+        <a class="nav-cta" href="#contact"
+          >Let's talk <span aria-hidden="true">↗</span></a
+        >
       </nav>
-
-      <button
-        class="menu-toggle"
-        type="button"
-        aria-expanded="false"
-        aria-controls="mobile-menu"
-      >
-        <span class="sr-only">Open menu</span>
-        <span></span><span></span>
-      </button>
     </header>
 
-    <div class="mobile-menu" id="mobile-menu" hidden>
-      <nav aria-label="Mobile navigation">
-        <a href="#top">Home</a>
-        <a href="#services">What we do</a>
-        <a href="#work">Work</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-
     <main id="main">
-      <section class="hero section-black" id="top" aria-labelledby="hero-title">
-        <div class="hero-inner container">
-          <h1 class="wordmark" id="hero-title" aria-label="MAVU BEVU">
-            <span>M</span><span>A</span><span>V</span><span>U</span>
-            <span>B</span><span>E</span><span>V</span><span>U</span>
-          </h1>
-          <p class="descriptor">Brand · Editing · Content · Marketing</p>
+      <section class="hero" id="top" aria-label="MAVU BEVU studio introduction">
+        <div class="hero-video-wrap">
+          <video
+            class="hero-video"
+            aria-label="MAVU BEVU studio introduction video"
+            autoplay
+            loop
+            muted
+            playsinline
+            preload="metadata"
+          >
+            <source
+              src="./videos/MAVU%20BEVU%20-%20Home%20Page%20169.mp4"
+              type="video/mp4"
+            />
+            Your browser does not support HTML5 video.
+          </video>
         </div>
-        <a class="scroll-cue" href="#intro" aria-label="Scroll to discover more"
-          >Scroll to discover</a
-        >
-      </section>
-
-      <section
-        class="section section-bone"
-        id="intro"
-        aria-labelledby="intro-title"
-      >
-        <div class="container opening-grid">
-          <div class="intro-mark" aria-label="MAVU BEVU">
-            <span>M</span><span>A</span><span>V</span><span>U</span>
-            <span>B</span><span>E</span><span>V</span><span>U</span>
-          </div>
-          <h2 class="display-heading" id="intro-title">
-            Good work deserves attention.
-          </h2>
-          <p class="lead-copy">
-            We help organisations turn ideas, initiatives and impact into
-            communication people notice, understand and remember.
-          </p>
+        <div class="hero-bottom">
+          <span>Brand · Editing · Content · Marketing</span>
+          <a href="#about"
+            >Scroll to explore <span aria-hidden="true">↓</span></a
+          >
         </div>
       </section>
 
       <section
-        class="section section-black"
-        id="services"
-        aria-labelledby="services-title"
-      >
-        <div class="container">
-          <p class="eyebrow" id="services-title">What we do</p>
-
-          <div class="services-grid">
-            <article class="service">
-              <span class="service-number">01</span>
-              <h3>Brand</h3>
-              <p>Define what you want to be recognised for.</p>
-            </article>
-
-            <article class="service">
-              <span class="service-number">02</span>
-              <h3>Editing</h3>
-              <p>Shape your existing content to fit your brand identity.</p>
-            </article>
-
-            <article class="service">
-              <span class="service-number">03</span>
-              <h3>Content</h3>
-              <p>Create bespoke content for your brand identity.</p>
-            </article>
-
-            <article class="service">
-              <span class="service-number">04</span>
-              <h3>Marketing</h3>
-              <p>Get it in front of the people who matter.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section
-        class="section section-bone impact"
-        aria-labelledby="impact-title"
-      >
-        <div class="container">
-          <p class="eyebrow">From initiative to impact</p>
-          <h2 class="large-heading" id="impact-title">
-            Your work deserves more than a post.
-          </h2>
-          <p class="lead-copy impact-copy">
-            An event may last a day. An initiative may last a month. Its impact
-            can travel much further. We help turn the work you do into
-            communication that builds recognition, carries the story forward and
-            keeps the impact visible long after the moment has passed.
-          </p>
-
-          <div class="impact-flow">
-            <article class="step">
-              <b>01</b><span>Build the campaign.</span>
-            </article>
-            <article class="step">
-              <b>02</b><span>Shape the content.</span>
-            </article>
-            <article class="step">
-              <b>03</b><span>Edit the story.</span>
-            </article>
-            <article class="step">
-              <b>04</b><span>Help it travel.</span>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section
-        class="section section-black work"
-        id="work"
-        aria-labelledby="work-title"
-      >
-        <div class="container">
-          <p class="eyebrow work-title" id="work-title">Selected work</p>
-          <p class="coming-soon" aria-label="Selected work coming soon">
-            COMING SOON
-          </p>
-        </div>
-      </section>
-
-      <section
-        class="section section-bone philosophy"
+        class="section philosophy"
         id="about"
         aria-labelledby="about-title"
       >
-        <div class="container philosophy-grid">
-          <div>
-            <div class="stacked-label" aria-label="MAVU BEVU">
-              <span>M</span><span>A</span><span>V</span><span>U</span>
-              <span>B</span><span>E</span><span>V</span><span>U</span>
-            </div>
+        <p class="eyebrow" id="about-title">01 / The idea behind the name</p>
+        <p class="philosophy-copy">
+          Mavu is mango. Bevu is neem. Two distinct characters, each bringing
+          something the other cannot.
+        </p>
+        <p class="philosophy-copy">
+          One does not diminish the other.
+          <span class="accent">Together, they make the whole story.</span>
+        </p>
+      </section>
+
+      <section
+        class="section services"
+        id="services"
+        aria-labelledby="services-title"
+      >
+        <div class="section-head">
+          <p class="eyebrow" id="services-title">02 / What we do</p>
+          <h2>Ideas made<br />to mean more.</h2>
+        </div>
+        <article class="service">
+          <span class="service-number">01</span>
+          <h3>Brand identity</h3>
+          <p>
+            Visual and verbal identities that give brands a distinct character
+            and a consistent voice.
+          </p>
+        </article>
+        <article class="service">
+          <span class="service-number">02</span>
+          <h3>Editing</h3>
+          <p>
+            We turn existing footage, photographs and ideas into compelling
+            visual stories, with careful attention to narrative, rhythm and
+            detail.
+          </p>
+        </article>
+        <article class="service">
+          <span class="service-number">03</span>
+          <h3>Content</h3>
+          <p>
+            Original content for brands, campaigns and digital platforms,
+            created with a clear purpose and attention to detail.
+          </p>
+        </article>
+        <article class="service">
+          <span class="service-number">04</span>
+          <h3>Marketing</h3>
+          <p>
+            Creative campaigns and communication that help brands reach the
+            right people and make a lasting impression.
+          </p>
+        </article>
+      </section>
+
+      <section class="section approach" aria-labelledby="approach-title">
+        <p class="eyebrow">03 / Our approach</p>
+        <div class="approach-grid">
+          <div class="approach-copy">
+            <h2 id="approach-title">Made with intention.</h2>
+            <p>
+              We believe the smallest details can carry the biggest meaning. We
+              question the obvious, look closer and find the story hiding in
+              plain sight.
+            </p>
+            <p>
+              No formula. No borrowed personality. Just work that feels like it
+              belongs.
+            </p>
           </div>
-
-          <div class="story">
-            <p class="eyebrow" id="about-title">The name</p>
-
-            <p class="story-copy">
-              We tend to remember life through its sweetest moments. The
-              photographs. The milestones. The stories we tell.
-            </p>
-            <p class="single-word">Mavu.</p>
-
-            <p class="story-copy">
-              Beneath them are the parts we speak about less. The effort. The
-              uncertainty. The struggle that gave those moments their meaning.
-            </p>
-            <p class="single-word">Bevu.</p>
-
-            <p class="story-copy final-story">
-              One does not diminish the other.<br />
-              Together, they make the whole story.
-            </p>
-            <div class="name-resolution" aria-label="MAVU BEVU wordmark">
-              <span>M</span><span>A</span><span>V</span><span>U</span>
-              <span>B</span><span>E</span><span>V</span><span>U</span>
-            </div>
-          </div>
+          <div
+            class="art"
+            role="img"
+            aria-label="Abstract shapes representing mango and neem"
+          ></div>
         </div>
       </section>
 
@@ -220,34 +156,31 @@
         aria-labelledby="contact-title"
       >
         <div class="container">
-          <p class="eyebrow">Start a conversation</p>
-          <h2 class="large-heading contact-heading" id="contact-title">
-            Let's make sure people talk about it.
+          <p class="eyebrow">04 / Begin something</p>
+          <h2 class="contact-heading" id="contact-title">
+            Have a story in mind?
           </h2>
+          <p class="contact-intro">
+            We believe in old-fashioned craftsmanship, even when the tools are
+            anything but old-fashioned.
+          </p>
 
-          <div class="contact-layout">
-            <div class="contact-intro">
-              <p>
-                Tell us what you're working on, where you are today and what you
-                want people to notice. We'll take it from there.
-              </p>
-            </div>
-
-            <form
-              class="contact-form"
-              id="contact-form"
-              action="#"
-              method="post"
-              novalidate
-            >
-              <input
-                id="_app_id"
-                name="_app_id"
-                type="text"
-                autocomplete="off"
-                tabindex="-1"
-                hidden
-              />
+          <form
+            class="contact-form"
+            id="contact-form"
+            action="#"
+            method="post"
+            novalidate
+          >
+            <input
+              id="_app_id"
+              name="_app_id"
+              type="text"
+              autocomplete="off"
+              tabindex="-1"
+              hidden
+            />
+            <div class="form-grid">
               <div class="field">
                 <label for="name">Name <span aria-hidden="true">*</span></label>
                 <input
@@ -259,21 +192,6 @@
                 />
                 <p class="field-error" data-error-for="name"></p>
               </div>
-
-              <div class="field">
-                <label for="phone"
-                  >Mobile Number <span aria-hidden="true">*</span></label
-                >
-                <input
-                  id="phone"
-                  name="phone"
-                  type="tel"
-                  autocomplete="tel"
-                  required
-                />
-                <p class="field-error" data-error-for="phone"></p>
-              </div>
-
               <div class="field">
                 <label for="email"
                   >Email <span aria-hidden="true">*</span></label
@@ -287,10 +205,23 @@
                 />
                 <p class="field-error" data-error-for="email"></p>
               </div>
-
-              <div class="field">
+              <div class="field form-full">
+                <label for="phone"
+                  >Mobile <span aria-hidden="true">*</span></label
+                >
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  autocomplete="tel"
+                  required
+                />
+                <p class="field-error" data-error-for="phone"></p>
+              </div>
+              <div class="field form-full">
                 <label for="message"
-                  >Message <span aria-hidden="true">*</span></label
+                  >Tell us about your project
+                  <span aria-hidden="true">*</span></label
                 >
                 <textarea
                   id="message"
@@ -300,75 +231,63 @@
                 ></textarea>
                 <p class="field-error" data-error-for="message"></p>
               </div>
-
-              <button class="submit-button" type="submit">
-                <span data-submit-label>Send →</span>
-              </button>
-
-              <p
-                class="form-status"
-                id="form-status"
-                role="status"
-                aria-live="polite"
-              ></p>
-            </form>
-          </div>
+            </div>
+            <button class="submit-button" type="submit">
+              <span data-submit-label>Send enquiry ↗</span>
+            </button>
+            <p
+              class="form-status"
+              id="form-status"
+              role="status"
+              aria-live="polite"
+            ></p>
+          </form>
 
           <footer class="footer">
-            <span class="footer-wordmark" aria-label="MAVU BEVU">
-              <span>M</span><span>A</span><span>V</span><span>U</span>
-              <span>B</span><span>E</span><span>V</span><span>U</span>
-            </span>
-            <span>Brand · Editing · Content · Marketing</span>
+            <a class="stacked-mark" href="#top" aria-label="MAVU BEVU">
+              <span class="mark-row mango-row"
+                ><b>M</b><b>A</b><b>V</b><b>U</b></span
+              >
+              <span class="mark-row neem-row"
+                ><b>B</b><b>E</b><b>V</b><b>U</b></span
+              >
+            </a>
+            <span>© 2026 MAVU BEVU. All rights reserved.</span>
           </footer>
         </div>
       </section>
     </main>
 
     <script src="./js/main.js" defer></script>
-    <!-- GoDaddy Conversations / Reamaze Chat -->
     <script
-      type="text/javascript"
       async
       src="https://cdn.reamaze.com/assets/reamaze-loader.js"
     ></script>
-
-    <script type="text/javascript">
+    <script>
       var _support = _support || { ui: {}, user: {} };
-
       _support["account"] = "ccdd8d30-b5dc-4ba4-b8d0-094a25c441a7";
-
       _support["ui"]["contactMode"] = "mixed";
       _support["ui"]["enableKb"] = "true";
       _support["ui"]["mailbox"] = "92221490";
-
       _support["ui"]["styles"] = {
-        widgetColor: "rgba(16, 162, 197, 1)",
-        gradient: true,
+        widgetColor: "rgba(61, 72, 50, 1)",
+        gradient: false,
       };
-
       _support["ui"]["shoutboxFacesMode"] = "";
-
       _support["ui"]["widget"] = {
         allowBotProcessing: "true",
         slug: "https-slash-slash-mavu-bevu-dot-vercel-dot-app-slash",
-
         label: {
-          text: "Let us know if you have any questions! 😊",
+          text: "Let us know if you have any questions!",
           mode: "notification",
           delay: 3,
           duration: 30,
           primary: "",
           sound: true,
         },
-
         position: "bottom-right",
       };
-
-      _support["apps"] = {
-        recentConversations: {},
-        faq: { enabled: true },
-      };
+      _support["apps"] = { recentConversations: {}, faq: { enabled: true } };
     </script>
   </body>
 </html>

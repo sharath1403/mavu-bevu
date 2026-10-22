@@ -4,9 +4,12 @@
   "version": "1.0.0",
   "description": "MAVU BEVU static website with a Vercel contact-form function.",
   "scripts": {
-    "dev": "vercel dev"
+    "dev:vercel": "vercel dev"
   },
   "engines": {
     "node": ">=20"
+  },
+  "devDependencies": {
+    "vercel": "^65.1.0"
   }
 }

@@ -127,7 +127,9 @@ contactForm?.addEventListener("submit", async (event) => {
 
     if (!response.ok) {
       throw new Error(
-        result.error || "We couldn't send your message. Please try again."
+        result.message ||
+        result.error ||
+        "We couldn't send your message. Please try again."
       );
     }
 
