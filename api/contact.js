@@ -48,7 +48,7 @@ export default async function handler(request, response) {
         from: "Mavubevu Website <contact@mavubevu.com>",
 
         // CHANGE THIS
-        to: ["sharath.bsy@gmail.com"],
+        to: ["huilgol.kiran@gmail.com"],
 
         reply_to: email,
 
